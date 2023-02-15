@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">ReStringTest</string>
+    <string name="test_word">测试文字</string>
+    <string name="go_to_activity_b">跳页</string>
+</resources>
