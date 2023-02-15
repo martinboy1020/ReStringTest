@@ -2,4 +2,12 @@
     <string name="app_name">ReStringTest</string>
     <string name="test_word">测试文字(已修改)</string>
     <string name="go_to_activity_b">跳页到B页</string>
+
+    <plurals name="quantity_string">
+        <item quantity="other">剩余%d天</item>
+    </plurals>
+
+    <plurals name="quantity_string2">
+        <item quantity="other">剩余%d年</item>
+    </plurals>
 </resources>

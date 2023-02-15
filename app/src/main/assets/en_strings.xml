@@ -2,4 +2,14 @@
     <string name="app_name">ReStringTest</string>
     <string name="test_word">Test Word(Modify)</string>
     <string name="go_to_activity_b">Go To Activity B</string>
+
+    <plurals name="quantity_string">
+        <item quantity="one">last %d day</item>
+        <item quantity="other">last %d days</item>
+    </plurals>
+
+    <plurals name="quantity_string2">
+        <item quantity="one">last %d year</item>
+        <item quantity="other">last %d years</item>
+    </plurals>
 </resources>

@@ -28,16 +28,16 @@ open class ReStringAndLanguageActivity : AppCompatActivity() {
         super.attachBaseContext(wrappedContext)
     }
 
-    private val appCompatDelegate: AppCompatDelegate by lazy {
-        ViewPumpAppCompatDelegate(
-            baseDelegate = super.getDelegate(),
-            baseContext = this,
-            wrapContext = Restring::wrapContext
-        )
-    }
-
-    override fun getDelegate(): AppCompatDelegate {
-        return appCompatDelegate
-    }
+//    private val appCompatDelegate: AppCompatDelegate by lazy {
+//        ViewPumpAppCompatDelegate(
+//            baseDelegate = super.getDelegate(),
+//            baseContext = this,
+//            wrapContext = Restring::wrapContext
+//        )
+//    }
+//
+//    override fun getDelegate(): AppCompatDelegate {
+//        return appCompatDelegate
+//    }
 
 }
