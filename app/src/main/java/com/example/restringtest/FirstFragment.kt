@@ -12,7 +12,7 @@ import com.example.restringtest.LanguageUtils.showChangeLanguageDialog
 import com.example.restringtest.Preference.saveString
 import com.example.restringtest.databinding.FragmentFirstBinding
 
-class FirstFragment : BaseViewBindingFragment<FragmentFirstBinding>(R.layout.fragment_first) {
+class FirstFragment : BaseFragment<FragmentFirstBinding>(R.layout.fragment_first) {
 
 //    override fun onCreateView(
 //        inflater: LayoutInflater,
