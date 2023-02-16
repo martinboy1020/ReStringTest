@@ -1,6 +1,7 @@
 package com.example.restringtest
 
 import android.annotation.TargetApi
+import android.app.Dialog
 import android.content.Context
 import android.content.res.Configuration
 import android.content.res.Resources
@@ -16,7 +17,6 @@ import android.view.Window
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
-import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.FragmentManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -30,6 +30,7 @@ import com.example.restringtest.Constants.LANGUAGE.LANGUAGE_CODE_CHINESE
 import com.example.restringtest.Constants.LANGUAGE.LANGUAGE_CODE_ENGLISH
 import com.example.restringtest.Constants.LANGUAGE.SIMPLIFIED_CHINESE
 import com.example.restringtest.Constants.LANGUAGE.TRADITIONAL_CHINESE
+import com.example.restringtest.databinding.DialogChangeLanguageBinding
 import dev.b3nedikt.restring.Restring
 import java.util.*
 
@@ -358,23 +359,19 @@ object LanguageUtils {
     class ChangeLanguageDialogFragment(
         private val languageList: MutableList<LanguageData>,
         private val listener: ChangeLanguageDialogListener? = null
-    ) : DialogFragment() {
+    ) : BaseViewBindingDialogFragment<DialogChangeLanguageBinding>(R.layout.dialog_change_language) {
 
         interface ChangeLanguageDialogListener {
             fun changeLanguage(languageId: String)
         }
 
-        override fun onCreateView(
-            inflater: LayoutInflater,
-            container: ViewGroup?,
-            savedInstanceState: Bundle?
-        ): View? {
-            dialog?.requestWindowFeature(Window.FEATURE_NO_TITLE)
-            dialog?.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
-            dialog?.setCancelable(true)
-            dialog?.setCanceledOnTouchOutside(true)
-            return LayoutInflater.from(context)
-                .inflate(R.layout.dialog_change_language, container, false)
+        override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
+            val dialog = Dialog(requireActivity())
+            dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
+            dialog.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+            dialog.setCancelable(true)
+            dialog.setCanceledOnTouchOutside(true)
+            return dialog
         }
 
         override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -393,6 +390,9 @@ object LanguageUtils {
             rvMultiLanguage.layoutManager = layoutManager
             rvMultiLanguage.adapter = adapter
         }
+
+        override fun initBinding(view: View): DialogChangeLanguageBinding =
+            DialogChangeLanguageBinding.bind(view)
 
     }
 

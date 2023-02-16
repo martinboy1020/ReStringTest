@@ -9,9 +9,9 @@ class SplashActivity : BaseActivity() {
 
     override fun onCreated() {
         Preference.init(this)
-        parserXmlToJson()
-//        finish()
-//        startActivity(Intent(this, MainActivity::class.java))
+//        parserXmlToJson()
+        finish()
+        startActivity(Intent(this, MainActivity::class.java))
     }
 
     private fun parserXmlToJson() {
